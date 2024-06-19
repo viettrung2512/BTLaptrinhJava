@@ -5,13 +5,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Layout</title>
-    <link rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-primary">
     <div class="container-fluid">
-        <a class="navbar-brand text-white" href="/products">Web Bán Hàng</a>
+        <a class="navbar-brand text-white" href="/nhanvien">2180608153_NguyenVietTrung</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -21,28 +21,22 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link text-white active" aria-current="page"
-                       href="/products">Product</a>
+                       href="/nhanvien">Thông tin nhân viên</a>
                 </li>
                 <li class="nav-item" sec:authorize="hasAnyAuthority('ADMIN')">
-                    <a th:href="@{/products/add}" class="nav-link text-white">Add
-                        New Product</a>
-                </li>
-                <li class="nav-item" sec:authorize="hasAnyAuthority('ADMIN')">
-                    <a th:href="@{/categories/add}" class="nav-link text-white">Add
-                        New Category</a>
+                    <a th:href="@{/nhanvien/add}" class="nav-link text-white">Tạo nhân viên mới</a>
                 </li>
             </ul>
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
                 <li class="nav-item d-flex align-items-center"
-                    sec:authorize="isAuthenticated()">
- <span class="navbar-text text-white">
- Xin chào, <span sec:authentication="name" style="marginright: 20px;"></span>
- </span>
+                    sec:authorize="isAuthenticated()"><span class="navbar-text text-white">Xin chào, <span
+                        sec:authentication="name" style="margin-right: 20px;"></span></span>
                 </li>
                 <li class="nav-item" sec:authorize="isAuthenticated()">
                     <form th:action="@{/logout}" method="post">
                         <button class="btn btn-outline-light"
-                                type="submit">Logout</button>
+                                type="submit">Logout
+                        </button>
                     </form>
                 </li>
                 <li class="nav-item" sec:authorize="!isAuthenticated()">
@@ -57,8 +51,8 @@
         <!-- Nội dung cụ thể của từng trang sẽ được đặt tại đây -->
     </section>
 </div>
-<script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
-</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>
